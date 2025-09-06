@@ -1,5 +1,15 @@
-# Firebase Studio
+# Initialize git if not already
+git init
 
-This is a NextJS starter in Firebase Studio.
+# Add all your project files
+git add .
 
-To get started, take a look at src/app/page.tsx.
+# Commit them
+git commit -m "Initial commit"
+
+# Add GitHub repository (replace with your actual repo link)
+git remote add origin https://github.com/kimkei04/Perkify.git
+
+# Push to GitHub
+git branch -M main
+git push -u origin main
