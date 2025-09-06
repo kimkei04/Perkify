@@ -1,4 +1,5 @@
 import type { SVGProps } from "react"
+import { Gift, Receipt, BarChart, MessageSquare, Star } from 'lucide-react';
 
 export const Icons = {
   logo: (props: SVGProps<SVGSVGElement>) => (
@@ -17,4 +18,9 @@ export const Icons = {
       <path d="M2 12l10 5 10-5" />
     </svg>
   ),
+  rewards: Gift,
+  receipts: Receipt,
+  analytics: BarChart,
+  chatbot: MessageSquare,
+  favorites: Star,
 }

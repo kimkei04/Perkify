@@ -4,30 +4,37 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Gift, BarChart, Users } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Icons } from '@/components/icons';
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <header className="container mx-auto h-20 flex items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-          <Icons.logo className="h-8 w-8 text-primary" />
-          LoyaltyHub
-        </Link>
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          <Button variant="ghost" asChild>
-            <Link href="/auth/login">Login</Link>
-          </Button>
-          <Button asChild>
-            <Link href="/auth/register">Sign Up <ArrowRight className="ml-2 h-4 w-4" /></Link>
-          </Button>
+    <div className="flex flex-col min-h-dvh bg-background">
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-14 max-w-screen-2xl items-center">
+          <Link href="/" className="flex items-center gap-2 font-bold text-lg mr-6">
+            <Icons.logo className="h-6 w-6 text-primary" />
+            <span className="font-bold">LoyaltyHub</span>
+          </Link>
+          <div className="flex flex-1 items-center justify-end space-x-2">
+            <ThemeToggle />
+            <Button variant="ghost" asChild>
+              <Link href="/login">Login</Link>
+            </Button>
+            <Button asChild>
+              <Link href="/register">Sign Up <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            </Button>
+          </div>
         </div>
       </header>
 
       <main className="flex-grow">
-        <section className="relative py-24 md:py-32 text-center bg-gradient-to-b from-background to-secondary">
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 font-headline">
+        <section className="relative py-20 md:py-32">
+           <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 h-full w-full bg-background bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
+          ></div>
+          <div className="container px-4 text-center">
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-4">
               Unlock Loyalty, Drive Growth
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
@@ -35,19 +42,19 @@ export default function Home() {
             </p>
             <div className="flex justify-center gap-4">
               <Button size="lg" asChild>
-                <Link href="/auth/register">Get Started for Free</Link>
+                <Link href="/register">Get Started for Free</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="/#features">Learn More</Link>
+                <Link href="#features">Learn More</Link>
               </Button>
             </div>
           </div>
         </section>
 
-        <section id="features" className="py-24 bg-background">
+        <section id="features" className="py-24 bg-secondary">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-headline">Features for Everyone</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Features for Everyone</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Whether you're a business owner or a savvy shopper, LoyaltyHub has something for you.
               </p>
@@ -97,7 +104,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="py-8 bg-secondary">
+      <footer className="py-8 bg-background border-t">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} LoyaltyHub. All rights reserved.</p>
         </div>
