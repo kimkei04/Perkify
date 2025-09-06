@@ -48,7 +48,7 @@ export default function BusinessLayout({
           <SidebarHeader>
             <Link href="/business" className="flex items-center gap-2 font-bold text-lg">
               <Icons.logo className="h-6 w-6 text-primary" />
-              <span className="text-md">LoyaltyHub for Business</span>
+              <span className="text-md">Perkify for Business</span>
             </Link>
           </SidebarHeader>
           <SidebarContent>

@@ -83,11 +83,11 @@ export default function RegisterPage() {
       <CardHeader className="text-center">
         <Link href="/" className="flex items-center justify-center gap-2 font-bold text-2xl mb-2">
           <Icons.logo className="h-8 w-8 text-primary" />
-          LoyaltyHub
+          Perkify
         </Link>
         <CardTitle className="text-2xl">Create an account</CardTitle>
         <CardDescription>
-          Join LoyaltyHub to start earning or offering rewards.
+          Join Perkify to start earning or offering rewards.
         </CardDescription>
       </CardHeader>
       <CardContent>

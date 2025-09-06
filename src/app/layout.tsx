@@ -7,8 +7,8 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'LoyaltyHub',
-  description: 'Connect with your favorite stores and earn rewards.',
+  title: 'Perkify',
+  description: 'The all-in-one platform for businesses to create rewarding loyalty programs and for customers to enjoy exclusive benefits.',
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
-        <ThemeProvider storageKey="loyaltyhub-theme">
+        <ThemeProvider storageKey="perkify-theme">
           {children}
           <Toaster />
         </ThemeProvider>

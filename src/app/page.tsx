@@ -13,7 +13,7 @@ export default function Home() {
         <div className="container flex h-14 max-w-screen-2xl items-center">
           <Link href="/" className="flex items-center gap-2 font-bold text-lg mr-6">
             <Icons.logo className="h-6 w-6 text-primary" />
-            <span className="font-bold">LoyaltyHub</span>
+            <span className="font-bold">Perkify</span>
           </Link>
           <div className="flex flex-1 items-center justify-end space-x-2">
             <ThemeToggle />
@@ -56,7 +56,7 @@ export default function Home() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Features for Everyone</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Whether you're a business owner or a savvy shopper, LoyaltyHub has something for you.
+                Whether you're a business owner or a savvy shopper, Perkify has something for you.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -106,7 +106,7 @@ export default function Home() {
 
       <footer className="py-8 bg-background border-t">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} LoyaltyHub. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Perkify. All rights reserved.</p>
         </div>
       </footer>
     </div>

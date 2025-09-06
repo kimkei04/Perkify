@@ -62,7 +62,7 @@ export default function LoginPage() {
       <CardHeader className="text-center">
         <Link href="/" className="flex items-center justify-center gap-2 font-bold text-2xl mb-2">
           <Icons.logo className="h-8 w-8 text-primary" />
-          LoyaltyHub
+          Perkify
         </Link>
         <CardTitle className="text-2xl">Welcome back</CardTitle>
         <CardDescription>

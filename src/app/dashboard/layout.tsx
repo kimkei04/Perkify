@@ -46,7 +46,7 @@ export default function DashboardLayout({
           <SidebarHeader>
             <Link href="/dashboard" className="flex items-center gap-2 font-bold text-lg">
               <Icons.logo className="h-6 w-6 text-primary" />
-              <span className="text-md">LoyaltyHub</span>
+              <span className="text-md">Perkify</span>
             </Link>
           </SidebarHeader>
           <SidebarContent>
