@@ -68,7 +68,8 @@ export default function BusinessLayout({
   return (
     <SidebarProvider>
       <div className="flex min-h-screen">
-        <Sidebar>
+        {/* Desktop Sidebar - Hidden on mobile */}
+        <Sidebar className="hidden md:flex">
           <SidebarHeader>
             <Link href="/business" className="flex items-center gap-2 font-bold text-lg">
               <Icons.logo className="h-6 w-6 text-primary" />
@@ -110,14 +111,31 @@ export default function BusinessLayout({
               </SidebarMenu>
           </SidebarFooter>
         </Sidebar>
-        <SidebarInset>
+        
+        <SidebarInset className="flex-1">
+          {/* Mobile Header */}
           <header className="flex h-14 items-center gap-4 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 lg:h-[60px] lg:px-6 sticky top-0 z-30">
+            {/* Mobile Menu Button */}
             <div className="flex items-center gap-2 md:hidden">
-                <SidebarTrigger />
+              <SidebarTrigger />
             </div>
+            
+            {/* Mobile Logo */}
+            <div className="md:hidden flex items-center gap-2">
+              <Icons.logo className="h-6 w-6 text-primary" />
+              <span className="font-bold text-lg">Perkify</span>
+            </div>
+            
+            {/* Desktop Logo */}
+            <div className="hidden md:flex items-center gap-2">
+              <Icons.logo className="h-6 w-6 text-primary" />
+              <span className="font-bold text-lg">Perkify for Business</span>
+            </div>
+            
             <div className="w-full flex-1">
               {/* Can add search bar here if needed */}
             </div>
+            
             <ThemeToggle />
             <Button variant="ghost" size="icon" className="rounded-full">
               <Bell className="h-4 w-4" />
@@ -127,10 +145,14 @@ export default function BusinessLayout({
               <UserNav />
             </div>
           </header>
-          <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+          
+          {/* Main Content */}
+          <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 pb-20 md:pb-6">
             {children}
           </main>
-           <BusinessMobileNav />
+          
+          {/* Mobile Navigation - Fixed at bottom */}
+          <BusinessMobileNav />
         </SidebarInset>
       </div>
     </SidebarProvider>
