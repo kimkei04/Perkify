@@ -269,24 +269,7 @@ export default function BillingPage() {
           </CardContent>
         </Card>
 
-        {/* School Project Notice */}
-        <Card className="border-yellow-200 bg-yellow-50 dark:bg-yellow-950/20">
-          <CardContent className="pt-6">
-            <div className="flex items-start gap-3">
-              <Star className="h-5 w-5 text-yellow-600 mt-0.5" />
-              <div>
-                <h4 className="font-medium text-yellow-800 dark:text-yellow-200">
-                  School Project Notice
-                </h4>
-                <p className="text-sm text-yellow-700 dark:text-yellow-300 mt-1">
-                  This is a demonstration application for educational purposes. All payment processing is simulated. 
-                  You can explore all features regardless of your selected plan. In a real SaaS application, 
-                  features would be restricted based on your subscription tier.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        
       </div>
     </>
   );
