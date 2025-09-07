@@ -24,6 +24,26 @@ import {
 import PageHeader from '@/components/page-header';
 import { consumerData } from '@/lib/data';
 
+// Progress Bar Component to avoid inline styles
+function ProgressBar({ current, target }: { current: number; target: number }) {
+  const percentage = Math.min((current / target) * 100, 100);
+  
+  // Determine which CSS class to use based on percentage
+  const getProgressClass = () => {
+    if (percentage >= 100) return 'progress-bar-100';
+    if (percentage >= 75) return 'progress-bar-75';
+    if (percentage >= 50) return 'progress-bar-50';
+    if (percentage >= 25) return 'progress-bar-25';
+    return 'progress-bar-25'; // Default to 25% for very low percentages
+  };
+  
+  return (
+    <div className="w-full bg-secondary rounded-full h-2 relative overflow-hidden">
+      <div className={`progress-bar ${getProgressClass()}`}></div>
+    </div>
+  );
+}
+
 export default function RewardsWalletPage() {
   const rewards = consumerData.rewards;
   const subscribedStores = consumerData.subscribedStores;
@@ -304,12 +324,10 @@ export default function RewardsWalletPage() {
                           <span>Progress</span>
                           <span>{Math.round((reward.currentPoints / reward.targetPoints) * 100)}%</span>
                         </div>
-                        <div className="w-full bg-secondary rounded-full h-2">
-                        <div 
-                          className="bg-primary h-2 rounded-full transition-all duration-300"
-                          style={{ width: `${Math.min((reward.currentPoints / reward.targetPoints) * 100, 100)}%` }}
-                        ></div>
-                        </div>
+                        <ProgressBar 
+                          current={reward.currentPoints} 
+                          target={reward.targetPoints} 
+                        />
                       </div>
                       
                       {reward.currentPoints >= reward.targetPoints && (

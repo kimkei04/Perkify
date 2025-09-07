@@ -83,3 +83,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .progress-bar {
+    @apply bg-primary h-2 rounded-full transition-all duration-300 absolute top-0 left-0;
+  }
+  
+  .progress-bar-25 { width: 25%; }
+  .progress-bar-50 { width: 50%; }
+  .progress-bar-75 { width: 75%; }
+  .progress-bar-100 { width: 100%; }
+}
