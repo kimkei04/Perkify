@@ -79,9 +79,11 @@ export default function BusinessLayout({
             <SidebarMenu>
               {navItems.map((item) => (
                 <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton href={item.href} tooltip={item.label}>
-                    <item.icon />
-                    {item.label}
+                  <SidebarMenuButton asChild tooltip={item.label}>
+                    <Link href={item.href}>
+                      <item.icon />
+                      {item.label}
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -90,15 +92,19 @@ export default function BusinessLayout({
           <SidebarFooter>
              <SidebarMenu>
                 <SidebarMenuItem>
-                  <SidebarMenuButton href="/business/billing" tooltip="Billing & Plans">
-                    <DollarSign />
-                    Billing & Plans
+                  <SidebarMenuButton asChild tooltip="Billing & Plans">
+                    <Link href="/business/billing">
+                      <DollarSign />
+                      Billing & Plans
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
-                  <SidebarMenuButton href="/business/settings" tooltip="Settings">
-                    <Settings />
-                    Settings
+                  <SidebarMenuButton asChild tooltip="Settings">
+                    <Link href="/business/settings">
+                      <Settings />
+                      Settings
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               </SidebarMenu>

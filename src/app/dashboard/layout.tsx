@@ -62,9 +62,11 @@ export default function DashboardLayout({
             <SidebarMenu>
               {navItems.map((item) => (
                 <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton href={item.href} tooltip={item.label}>
-                    <item.icon />
-                    {item.label}
+                  <SidebarMenuButton asChild tooltip={item.label}>
+                    <Link href={item.href}>
+                      <item.icon />
+                      {item.label}
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -73,9 +75,11 @@ export default function DashboardLayout({
           <SidebarFooter>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton href="/dashboard/settings" tooltip="Settings">
-                  <Settings />
-                  Settings
+                <SidebarMenuButton asChild tooltip="Settings">
+                  <Link href="/dashboard/settings">
+                    <Settings />
+                    Settings
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
