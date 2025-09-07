@@ -9,6 +9,10 @@ import {
   Bell,
   Settings,
   User,
+  BarChart3,
+  Palette,
+  Brain,
+  DollarSign,
 } from 'lucide-react';
 
 import {
@@ -28,14 +32,33 @@ import { UserNav } from '@/components/user-nav';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Icons } from '@/components/icons';
 import { BusinessMobileNav } from '@/components/business/mobile-nav';
+import { saasPlans, currentUserPlan } from '@/lib/data';
 
-const navItems = [
-  { href: '/business', icon: LayoutDashboard, label: 'Dashboard' },
-  { href: '/business/customers', icon: Users, label: 'Customers' },
-  { href: '/business/rewards', icon: Award, label: 'Rewards Program' },
-  { href: '/business/insights', icon: Sparkles, label: 'AI Insights' },
-  { href: '/business/profile', icon: Building, label: 'Profile' },
+// Define navigation items with plan requirements
+const allNavItems = [
+  { href: '/business', icon: LayoutDashboard, label: 'Dashboard', plan: 'basic' },
+  { href: '/business/customers', icon: Users, label: 'Customers', plan: 'basic' },
+  { href: '/business/rewards', icon: Award, label: 'Rewards Program', plan: 'basic' },
+  { href: '/business/analytics', icon: BarChart3, label: 'Analytics', plan: 'basic' },
+  { href: '/business/notifications', icon: Bell, label: 'Notifications', plan: 'basic' },
+  { href: '/business/pro-features', icon: Palette, label: 'Pro Features', plan: 'advanced' },
+  { href: '/business/advanced-features', icon: Brain, label: 'Advanced', plan: 'pro' },
+  { href: '/business/insights', icon: Sparkles, label: 'AI Insights', plan: 'advanced' },
+  { href: '/business/profile', icon: Building, label: 'Profile', plan: 'basic' },
 ];
+
+// Filter navigation items based on current plan
+const getNavItemsForPlan = (plan: string) => {
+  const planHierarchy = { basic: 0, advanced: 1, pro: 2 };
+  const currentPlanLevel = planHierarchy[plan as keyof typeof planHierarchy] || 0;
+  
+  return allNavItems.filter(item => {
+    const itemPlanLevel = planHierarchy[item.plan as keyof typeof planHierarchy] || 0;
+    return itemPlanLevel <= currentPlanLevel;
+  });
+};
+
+const navItems = getNavItemsForPlan(currentUserPlan);
 
 export default function BusinessLayout({
   children,
@@ -66,6 +89,12 @@ export default function BusinessLayout({
           </SidebarContent>
           <SidebarFooter>
              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton href="/business/billing" tooltip="Billing & Plans">
+                    <DollarSign />
+                    Billing & Plans
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton href="/business/settings" tooltip="Settings">
                     <Settings />

@@ -7,6 +7,10 @@ import {
   UserCircle,
   Bell,
   Settings,
+  Search,
+  Receipt,
+  Wallet,
+  Bot,
 } from 'lucide-react';
 
 import {
@@ -29,7 +33,12 @@ import { DashboardMobileNav } from '@/components/dashboard/mobile-nav';
 
 const navItems = [
   { href: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
-  { href: '/dashboard/stores', icon: Store, label: 'Stores' },
+  { href: '/dashboard/search', icon: Search, label: 'Find Stores' },
+  { href: '/dashboard/stores', icon: Store, label: 'My Stores' },
+  { href: '/dashboard/receipts', icon: Receipt, label: 'Receipts' },
+  { href: '/dashboard/wallet', icon: Wallet, label: 'Rewards Wallet' },
+  { href: '/dashboard/notifications', icon: Bell, label: 'Notifications' },
+  { href: '/dashboard/chatbot', icon: Bot, label: 'AI Assistant' },
   { href: '/dashboard/history', icon: History, label: 'Purchase History' },
   { href: '/dashboard/profile', icon: UserCircle, label: 'Profile' },
 ];

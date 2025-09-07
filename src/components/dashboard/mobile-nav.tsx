@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { LayoutDashboard, Store, History, UserCircle } from "lucide-react";
+import { LayoutDashboard, Store, History, UserCircle, Search, Receipt, Wallet, Bell, Bot } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 type NavItem = {
@@ -12,10 +12,11 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { href: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
-  { href: '/dashboard/stores', icon: Store, label: 'Stores' },
-  { href: '/dashboard/history', icon: History, label: 'History' },
-  { href: '/dashboard/profile', icon: UserCircle, label: 'Profile' },
+  { href: '/dashboard', icon: LayoutDashboard, label: 'Home' },
+  { href: '/dashboard/search', icon: Search, label: 'Search' },
+  { href: '/dashboard/wallet', icon: Wallet, label: 'Wallet' },
+  { href: '/dashboard/notifications', icon: Bell, label: 'Alerts' },
+  { href: '/dashboard/chatbot', icon: Bot, label: 'AI' },
 ];
 
 export function DashboardMobileNav() {
