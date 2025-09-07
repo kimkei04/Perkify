@@ -25,7 +25,7 @@ import { Button } from '@/components/ui/button';
 import { UserNav } from '@/components/user-nav';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Icons } from '@/components/icons';
-import { MobileNav } from '@/components/mobile-nav';
+import { DashboardMobileNav } from '@/components/dashboard/mobile-nav';
 
 const navItems = [
   { href: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
@@ -92,7 +92,7 @@ export default function DashboardLayout({
           <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
             {children}
           </main>
-          <MobileNav navItems={navItems} />
+          <DashboardMobileNav />
         </SidebarInset>
       </div>
     </SidebarProvider>

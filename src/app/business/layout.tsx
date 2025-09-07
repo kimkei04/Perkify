@@ -26,7 +26,7 @@ import { Button } from '@/components/ui/button';
 import { UserNav } from '@/components/user-nav';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Icons } from '@/components/icons';
-import { MobileNav } from '@/components/mobile-nav';
+import { BusinessMobileNav } from '@/components/business/mobile-nav';
 
 const navItems = [
   { href: '/business', icon: LayoutDashboard, label: 'Dashboard' },
@@ -94,7 +94,7 @@ export default function BusinessLayout({
           <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
             {children}
           </main>
-           <MobileNav navItems={navItems} />
+           <BusinessMobileNav />
         </SidebarInset>
       </div>
     </SidebarProvider>
