@@ -8,6 +8,7 @@ import {
   Building,
   Bell,
   Settings,
+  User,
 } from 'lucide-react';
 
 import {
@@ -33,7 +34,7 @@ const navItems = [
   { href: '/business/customers', icon: Users, label: 'Customers' },
   { href: '/business/rewards', icon: Award, label: 'Rewards Program' },
   { href: '/business/insights', icon: Sparkles, label: 'AI Insights' },
-  { href: '#', icon: Building, label: 'Profile' },
+  { href: '/business/profile', icon: Building, label: 'Profile' },
 ];
 
 export default function BusinessLayout({
@@ -66,7 +67,7 @@ export default function BusinessLayout({
           <SidebarFooter>
              <SidebarMenu>
                 <SidebarMenuItem>
-                  <SidebarMenuButton href="#" tooltip="Settings">
+                  <SidebarMenuButton href="/business/settings" tooltip="Settings">
                     <Settings />
                     Settings
                   </SidebarMenuButton>

@@ -31,7 +31,7 @@ const navItems = [
   { href: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
   { href: '/dashboard/stores', icon: Store, label: 'Stores' },
   { href: '/dashboard/history', icon: History, label: 'Purchase History' },
-  { href: '#', icon: UserCircle, label: 'Profile' },
+  { href: '/dashboard/profile', icon: UserCircle, label: 'Profile' },
 ];
 
 export default function DashboardLayout({
@@ -64,7 +64,7 @@ export default function DashboardLayout({
           <SidebarFooter>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton href="#" tooltip="Settings">
+                <SidebarMenuButton href="/dashboard/settings" tooltip="Settings">
                   <Settings />
                   Settings
                 </SidebarMenuButton>
